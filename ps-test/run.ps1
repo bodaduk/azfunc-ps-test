@@ -9,5 +9,8 @@ if ($Timer.IsPastDue) {
     Write-Host "PowerShell timer is running late!"
 }
 
-# Write an information log with the current time.
-Write-Host "PowerShell timer trigger function ran! TIME: $currentUTCtime"
+Write-Host "PowerShell timer trigger function started TIME: $currentUTCtime"
+
+Get-AzResourceGroup
+
+Write-Host "PowerShell timer trigger function completed TIME: $((Get-Date).ToUniversalTime())"
