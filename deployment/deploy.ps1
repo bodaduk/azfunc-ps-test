@@ -25,4 +25,7 @@ az deployment group create --mode Incremental `
     --template-file deployment/main.bicep `
     --parameters asset=$asset location=$location
 
+$principalId = & az functionapp identity show --resource-group $asset --name $asset --query 'principalId' --output tsv
+az role assignment create --assignee $principalId --role 'Reader' --subscription $subscription
+
 func azure functionapp publish $asset
