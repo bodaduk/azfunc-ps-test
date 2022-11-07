@@ -41,7 +41,7 @@ module functionApp 'functionapp.bicep' = {
   params: {
     asset: asset
     location: location
-    functionName: 'event-handler'
+    functionName: 'ps-test'
     storageAccountId: storage.outputs.Id
     appServicePlanId: appServicePlan.outputs.Id
     appInsightsInstrumentationKey: appInsights.outputs.InstrumentationKey
